@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Blast</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="Icon" href="./Main Pictures/Icon.png">
+</head>
+<body>
+    <!--Up Shortcut-->
+    <div class="up-arrow">
+    <a href="#"><button>🡹</button></a>
+    </div>
+ 
+    <!--Advertisment Popup-->
+    <div id="overlay">
+    <div class="popup">
+    <h2>Special Offer!!</h2>
+    <img src="./Main Pictures/Logo.png" style="height: 130px; width: 100px; object-fit: cover;">
+    <p>Sign-up now to get 50% off on our premium collection!</p>
+    <audio controls muted><source src="./Gallery/Audios/Island beat music.mp3" type="audio/mpeg"></audio><br/>
+    <button id="closeBtn">Close</button>
+    </div>
+    </div>
+
+    <!--Header-->
+    <header class="container-fluid">
+    <img src="./Main Pictures/Icon.png" id="logo">
+    <h1>SOUND BLAST</h1>
+    <ol>
+    <li><a href="Main Page.html">HOME</a></li>
+    <li><a href="#audio">AUDIO</a></li>
+    <div class="dropdown">
+    <li class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <a href="#effects">EFFECTS <i  class="fa-solid fa-caret-down" style="color: #000000;"></i></a></li>
+    <ul class="dropdown-menu">
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Rock Music.html">Rock Music</a></li>
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Electronic Music.html">Electronic Music</a></li>
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Pop Music.html">Pop Music</a></li>
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Country M.html">Country Music</a></li>
+    </ul>
+    </div>
+    <li><a href="#aboutus">ABOUT</a></li>
+    <li><a href="#premium" id="openPopup">PREMIUM</a></li>
+    <input type="text" class="search-input" placeholder="Search here..">
+    <i class="fas fa-search search-icon" style="color: #cccccc;"></i></ol>
+
+    <!--For Mobile Mode-->
+    <button id="dropbar"><i class="fa-solid fa-bars"></i></button>
+    <div id="dropbar-content" style="top: -100%;">
+    <img src="./Main Pictures/Icon.png" id="logo00">
+    <li><a href="Main Page.html">HOME</a></li>
+    <li><a href="#audio">AUDIO</a></li>
+    <div class="dropdown">
+    <li class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <a href="#effects">EFFECTS <i  class="fa-solid fa-caret-down" style="color: #000000;"></i></a></li>
+    <ul class="dropdown-menu">
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Rock Music.html">Rock Music</a></li>
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Electronic Music.html">Electronic Music</a></li>
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Pop Music.html">Pop Music</a></li>
+    <li><a class="dropdown-item" target="_blank" href="./Genre/Country M.html">Country Music</a></li>
+    </ul>
+    </div>
+    <li><a href="#aboutus">ABOUT</a></li>
+    <li><a href="#premium" id="openPopup">PREMIUM</a></li>
+    </div>
+    </header>
+    
+    <!--Video bg with logo-->
+    <div id="video-box" class="container-fluid p-0 m-0 mx-auto my-auto">
+    <video src="./Main Pictures/Background.mp4" autoplay muted class="p-0 m-0"></video>
+    </div>
+
+    <!--Premium Version Popup-->
+    <div class="popup00" id="popup00">
+    <h3>PREMIUM VERSION</h3>
+    <p>Register Yourself For Premium Trending Songs!</p>
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="soundblast.kzf@gmail.com">
+    <br/><br/>
+    <label for="tel">Pay Acc:</label>
+    <input type="tel" id="tel" placeholder="*************">
+    <br/>
+    <button id="log-in">Log-in</button>
+    <button id="closePopup">Close</button>
+    <br/><br/>
+    <p>Haven't registered?<a href="./Premium Content/Premium Pay.html" style="color: #65ca96;"> Sign-up Now!</a></p>
+    </div>
+    <div class="overlayer" id="overlayer"></div>
+
+    <!--Payment Popup-->
+    <div class="paypop" id="paypop">
+    <h3 style="text-align: center;"><u><b>PREMIUM</b></u></h3>
+    <p id="paydollar">Pay 10$ To Get Access Of Premium<br/> Songs Version.</p>
+    <p id="payment" style="display: none;"><b>Your Payment Is Successful,</b><br/>
+    You'll receive OTP via Email, and <br> you can enjoy premium version msuic.</p>
+    <button id="confirmButton">$10</button>
+    <button id="closePaypop">Close</button>
+    </div>
+    <div class="paylayer" id="paylayer"></div>
+
+    <!--Premium Content-->
+    <section id="premium" class="container mt-3">
+    <h2>TRENDING NOW</h2><br/>
+    <button id="openPaypop"><i class="fa-solid fa-crown"></i> PREMIUM</button>
+    <br/>
+    <div class="row row-cols-1 row-cols-md-4 g-3 mb-4">
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 01.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title">O Maahi <i class="fa-solid fa-crown" id="openPaypop"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: Arjit Singh</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 02.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title">Calm Down <i class="fa-solid fa-crown"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: Selena Gomez & Rema</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 06.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title">Zaalima <i class="fa-solid fa-crown"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: Arjit & Harshdeep Kaur</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 08.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title">Perfect <i class="fa-solid fa-crown"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: One Direction</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 05.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title" style="font-size: 22px;">Danza Kudoro <i class="fa-solid fa-crown"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: Don Omar ft. Lucenzo</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 03.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title">Secrets <i class="fa-solid fa-crown"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: Talha Anjum</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 04.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title">Illuminate <i class="fa-solid fa-crown"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: Shawn Mendes</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card h-100">
+    <img src="./Gallery/Images/TN 07.jpg" class="card-img-top" id="premium-image">
+    <div class="card-body">
+    <h5 class="card-title">Saaware <i class="fa-solid fa-crown"></i></h5>
+    <p class="card-text"><small class="text-body-secondary">By: Arjit Singh</small></p>
+    <audio src="audio.mp3" type="audio/mpeg" controls muted class="audio-tn"></audio>
+    </div>
+    </div>
+    </div>
+    </div>
+    <button id="viewmore"><a href="Premium Content/Premium.html" target="_blank">View More</a></button>
+    </section>
+
+    <!--Popular Albums (Home Page)-->
+    <h2>POPULAR ALBUMS</h2>
+    <div id="albums" class="container-fluid">
+    <div class="image-slider">
+    <div class="main-image">
+    <img src="./Gallery/Images/Album 2.jpg" alt="Hit Me Hard & Soft by Billie Eilish">
+    <span class="overlay05">Hit Me Hard & Soft by Billie Eilish</span>
+    </div>
+    <div class="thumbnail-images">
+    <a href="Albums/Zayn Albums.html" target="_blank">
+    <img src="./Gallery/Images/Album 3.jpg" alt="Room Under The Stairs By Zayn"></a>
+    <a href="Albums/Taylor Albums.html" target="_blank">
+    <img src="./Gallery/Images/Album 1.jpg" alt="Reputation By Taylor Swift"></a>
+    <a href="Albums/Dua Lipa Albums.html" target="_blank">
+    <img src="./Gallery/Images/Album 5.jpg" alt="Radical Optimism By Dua Lipa"></a>
+    <a href="Albums/Beth Albums.html" target="_blank"> 
+    <img src="./Gallery/Images/Album 4.jpg" alt="Lives Outgrown By Beth Gibbons"></a>
+    <a href="Albums/Billie Albums.html" target="_blank"> 
+    <img src="./Gallery/Images/Album 2.jpg" alt="Hit Me Hard & Soft by Billie Eilish"></a>
+    </div>
+    </div>
+    </div>
+    <br/>
+
+    <!--Recent Releases (Audio)-->
+    <section id="audio" class="container">
+    <h2>RECENT RELEASE</h2>
+    <div class="slider-container" class="container">
+    <div class="slider-images">
+    <div class="slider-img">
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Kana Yaari.mp3')">
+    <img src="./Gallery/Images/Recent Release 3.jpg" alt="Kaana Yaari"></a>
+    <div class="details">
+    <h3>Kaana Yaari</h3>
+    <p>Eva B & AWB</p>
+    </div>
+    </div>
+    <div class="slider-img">
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Chan Tak.mp3')">
+    <img src="./Gallery/Images/Recent Release 1.jpg"></a>
+    <div class="details">
+    <h3>Sadqay</h3>
+    <p>Nehaal & Aashir</p>
+    </div>
+    </div>
+    <div class="slider-img active">
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Victoria J.mp3')">
+    <img src="./Gallery/Images/Recent Release 2.JPG"></a>
+    <div class="details">
+    <h3>Only A Stranger</h3>
+    <p>Victoria Justice</p>
+    </div>
+    </div>
+    <div class="slider-img">
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Hasan & Rahim.mp3')">
+    <img src="./Gallery/Images/Recent Release 5.jpg"></a>
+    <div class="details">
+    <h3>Lamha</h3>
+    <p>Hasan & Roshaan</p>
+    </div>
+    </div>
+    <div class="slider-img">
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Pasoori.mp3')">
+    <img src="./Gallery/Images/Recent Release 4.jpeg"></a>
+    <div class="details">
+    <h3>Pasoori</h3>
+    <p>Ali & Shae Gill</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Audio Player Overlay (for recent release and carousel) -->
+    <div id="audio-player-overlay" class="audio-overlay">
+    <div class="audio-container">
+    <span class="close-audiobtn" onclick="closeAudio()">&times;</span>
+    <audio id="audio-player" controls>
+    <source id="audio-source" src="" type="audio/mp3">
+    </audio>
+    </div>
+    </div>
+
+    <!--Podcasts-->
+    <h2>PODCASTS</h2>
+    <div class="podcasts container-fluid">
+    <div class="podcast-box" id="podcast-box1">
+    <h4>Box 1</h4>
+    <img class="podcast-image" src="./Podcasts/Podcast 1.png">
+    <audio class="podcast-audio" controls muted>
+    <source src="./Podcasts/Degree VS Skills.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+    <div class="podcast-box" id="podcast-box2">
+    <h4>Box 2</h4>
+    <img class="podcast-image" src="./Podcasts/Podcast 2.jpg">
+    <audio class="podcast-audio" controls>
+    <source src="./Podcasts/JOB vs Business.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+    <br/>
+    <button id="viewmore"><a href="./Podcasts/Podcast.html" target="_blank">View More</a></button> 
+    </div>
+    <br/>
+
+    <!--Carousel Content (Home Page)-->
+    <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="./Gallery/Images/Carsouel 01.jpg" class="d-block w-100">
+    <div class="overlay01">
+    <div class="overlay-text">
+    <h4>TOP CHART</h4>
+    </div>
+    <div class="tc-1">
+    <a href="#!" onclick="openAudio('./Albums/Taylor Swift/Look what you me do.mp3')">
+    <img src="./Gallery/Images/Top Chart 02.jpg" id="img01" class="slide-in"></a>
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Mitraz Song.mp3')">
+    <img src="./Gallery/Images/Top Chart 01.jpg" id="img02" class="slide-in"></a>
+    <a href="#!" onclick="openAudio('./Albums/Zayn/ZAYN  Birds on a Cloud.mp3')">
+    <img src="./Gallery/Images/Top Chart 03.jpg" id="img03" class="slide-in"></a>
+    </div>
+    <div class="tc-2"> 
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Kahani Suno.mp3')">
+    <img src="./Gallery/Images/Top Chart 06.jpg" id="img03" class="slide-in"></a>
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Closer Song.mp3')">
+    <img src="./Gallery/Images/Top Chart 05.jpg" id="img04" class="slide-in"></a>
+    <a href="#!" onclick="openAudio('./Gallery/Audio Songs/Chan Tak.mp3')">
+    <img src="./Gallery/Images/Top Chart 04.jpg" id="img05" class="slide-in"></a>  
+    </div>
+    </div>
+    </div>
+    <div class="carousel-item">
+    <img src="./Gallery/Images/Carsouel 2.jpg" class="d-block w-100">
+    <div class="overlay01">
+    <div class="overlay-text">
+    <h4>TOP SINGERS</h4>
+    </div>
+    <div class="tc-3">
+    <a href="./Albums/Miley Cyrus.html" target="_blank">
+    <img src="./Gallery/Images/Singer 1.jpg" id="img03" class="slide-out"></a>
+    <a href="./Albums/Weeknd.html" target="_blank">
+    <img src="./Gallery/Images/Singer 2.png" id="img02" class="slide-out"></a>
+    <a href="./Albums/Taylor.html" target="_blank">
+    <img src="./Gallery/Images/Singer 3.jpg" id="img01" class="slide-out"></a>
+    </div>
+    <div class="tc-4"> 
+    <a href="./Albums/Atif Aslam.html" target="_blank">
+    <img src="./Gallery/Images/Singer 4.jpg" id="img06" class="slide-out"></a>
+    <a href="./Albums/Qurat-ul-Ain Balouch.html" target="_blank">
+    <img src="./Gallery/Images/Singer 5.jpg" id="img05" class="slide-out"></a>
+    <a href="./Albums/Diljit Dosanjh.html" target="_blank">
+    <img src="./Gallery/Images/Singer 6.jpg" id="img04" class="slide-out"></a>  
+    </div>
+    </div>
+    </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+    <!--EFFECTS-->
+    <section id="effects" class="container">
+    <h2>SOUND EFFECTS</h2><br/>
+    <h6 style="font-style: normal;"><b>Sound And Voice Effect With Genre Range.</b></h6>
+    <div class="genre">
+    <button class="genreBtn" onclick="showMusic()">Rock Music</button>
+    <button class="genreBtn" onclick="showNature()">Electronic Music</button>
+    <button class="genreBtn" onclick="showHuman()">Pop Music</button>
+    <button class="genreBtn" onclick="showAnimal()">Country Music</button>
+    </div>
+    <div class="container">
+
+    <div id="music-rhythm">
+    <h5>Rock Music</h5>
+    <br/><br/>
+    <div class="row">
+    <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+    <a class="p-1 rounded" href="#guitar">Guitar</a>
+    <a class="p-1 rounded" href="#bass-club">Hip-Hop</a>
+    <a class="p-1 rounded" href="./Genre/Rock Music.html" target="_blank" style="color: #16b664;">View More</a>
+    </div>
+    </div>
+    <div class="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+    <div class="music-container" id="guitar">
+    <img src="./Gallery/Images/Guitar.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Guitar Melody</h4>
+    <audio src="./Gallery/Audios/Melody guitar.wav" controls muted></audio>
+    </div>
+    </div>
+    <div class="music-container" id="bass-club">
+    <img src="./Gallery/Images/Hip hop.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Hip-Hop</h4>
+    <audio src="./Gallery/Audios/Island beat music.mp3" controls muted></audio>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="nature-noise" style="display: none;">
+    <h5>Electronic Music</h5>
+    <br/><br/>
+    <div class="row">
+    <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+    <a class="p-1 rounded" href="#nature-1">Electronic Song </a>
+    <a class="p-1 rounded" href="#nature-2">Electronic Bass</a>
+    <a class="p-1 rounded" href="./Genre/Electronic Music.html" target="_blank" style="color: #16b664;">View More</a>
+    </div>
+    </div>
+    <div class="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+    <div class="music-container" id="nature-1">
+    <img src="./Gallery/Images/Bass Club.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Electronic Song</h4>
+    <audio src="./Gallery/Audios/Electronic Music.mp3" controls muted></audio>
+    </div>
+    </div>
+    <div class="music-container" id="nature-2">
+    <img src="./Gallery/Images/Electronic 1.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Electronic Bass</h4>
+    <audio src="./Gallery/Audios/Electronic 1.mp3" controls muted></audio>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="human-action" style="display: none;">
+    <h5>Pop Music</h5>
+    <br/><br/>
+    <div class="row">
+    <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+    <a class="p-1 rounded" href="#human-1">Pop Theme</a>
+    <a class="p-1 rounded" href="#human-4">Crowd Fest Pop</a>
+    <a class="p-1 rounded" href="./Genre/Pop Music.html" target="_blank" style="color: #16b664;">View More</a>
+    </div>
+    </div>
+    <div class="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+    <div class="music-container" id="human-1">
+    <img src="./Gallery/Images/pop music 1.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Pop Theme</h4>
+    <audio src="./Gallery/Audios/Pop Music 001.mp3" controls muted></audio>
+    </div>
+    </div>
+    <div class="music-container" id="human-4">
+    <img src="./Gallery/Images/pop music 3.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Crowd Fest Pop</h4>
+    <audio src="./Gallery/Audios/Pop Music 001.mp3" controls muted></audio>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div id="animal-voice" style="display: none;">
+    <h5>Country Music</h5>
+    <br/><br/>
+    <div class="row">
+    <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+    <a class="p-1 rounded" href="#animal-1">Country Rock By Letty</a>
+    <a class="p-1 rounded" href="#animal-3">Country Band Beats</a>
+    <a class="p-1 rounded" href="./Genre/Country M.html" target="_blank" style="color: #16b664;">View More</a>
+    </div>
+    </div>
+    <div class="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+    <div class="music-container" id="animal-1">
+    <img src="./Gallery/Images/country music 1.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Country Rock</h4>
+    <audio src="./Gallery/Audios/Country pop 2.mp3" controls muted></audio>
+    </div>
+    </div>
+    <div class="music-container" id="animal-3">
+    <img src="./Gallery/Images/country music 3.jpg" class="music-img">
+    <div class="overlay04">
+    <h4>Country Band Beats</h4>
+    <audio src="./Gallery/Audios/Country Music.mp3" controls muted></audio>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!--ABOUT-->
+    <section id="aboutus">
+    <div id="about-bg" class="mt-3"></div>
+    <h2 style="color: white;">ABOUT US</h2>
+    <div id="about" class="container">
+    <img src="Main Pictures/Logo without bg.png">
+    <p>Sound Blast is the ultimate destination for music enthusiasts, offering an unparalleled variety of
+    tunes from artists around the globe, allowing users to find and enjoy the widest variety of music from
+    the planet's most diversified creator community. The website is now well-known for its distinctive features
+    and content, such as the capacity to find podcasts, unfinished demos, breakthrough songs, and more.
+    An open platform that establishes direct connections between creators and their global fan base makes this
+    possible. Sound Blast allows producers of music and audio to distribute their work to a worldwide audience
+    and get in-depth analytics from the Sound Blast community. Sound Blast provides the perfect environment to
+    immerse yourself in the world of music.
+    <span class="animated-text" style="background-color: #fdcd01; text-align: center;">❝Sound Blast: Where Every Beat Explodes with Power!❞</span>
+    </p>
+    </div>
+    </section>
+
+    <br/><br/>
+    <div id="feedback">
+    <p>Please share your feedback or complains here..</p>
+    <button><a href="./feedback.html" target="_blank">FEEDBACK FORM</a></button>
+    </div>
+    <br><br/>
+
+    <!--Footer-->
+    <footer>
+    <div id="footer-media" class="container-fluid">
+    <img src="Main Pictures/Icon.png">
+    <ul class="ms-3 mt-3 mb-2">Find Us At:
+    <i class="fa-brands fa-facebook"></i> 
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-pinterest"></i></ul>
+    </div>
+    <p class="container-fluid"><i class="fa fa-copyright" aria-hidden="true"></i>
+    Sound Blast || Copyright 2024</p>
+    </footer>
+
+    <!--JQUERY-->
+    <script src="./jquery-3.7.1.js"></script>
+    <!--JQUERY File-->
+    <script src="./Jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!--Bootstrap-->
+    <script src="./bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <!--JavaScript-->
+    <script src="./Script.js"></script>
+</body>
+</html>

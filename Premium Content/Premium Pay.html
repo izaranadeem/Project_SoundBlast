@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sound Blast</title>
+    <link rel="Icon" href="../Main Pictures/Icon.png">
+<style>
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("./BACKGROUND.jpg");
+    margin: 0;
+}
+.signup-container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+.signup-container h2{
+    margin-bottom: 20px;
+}
+.form-group{
+    margin-bottom: 15px;
+    text-align: left;
+}
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.849);
+    border-radius: 5px;
+}
+.form-group input[type="checkbox"]{
+    margin-right: 10px;
+    color: #16b664;
+}
+button{
+    background-color: #056b5d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+button:hover{
+    background-color: #16b664;
+}
+button a:hover{
+    text-decoration: none;
+}
+a{
+    color: #056b5d;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content{
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.808);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+.modal-content h2{
+    font-size: 18px;
+}
+.modal-content p{
+    font-size: 15px;
+}
+.close-button {
+    color: #056b5d;
+    float: right;
+    font-size: 26px;
+    font-weight: bold;
+}
+.close-button:hover, .close-button:focus{
+    color: #16b664;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <div class="signup-container">
+    <h2>Sign Up for Premium Access!!</h2>
+    <form id="signup-form">
+    <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required>
+    </div>
+    <div class="form-group">
+    <input type="checkbox" id="terms" required>
+    <label for="terms">I agree to the <a href="#" id="terms-link">Terms and Conditions</a></label>
+    </div>
+    <button type="button"><a href="../Main Page.html">Back</a></button>
+    <button type="submit"><a href="./Premium.html">Sign Up</a></button>
+    </form>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="terms-modal" class="modal">
+    <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Terms and Conditions</h2>
+    <p>1. By completing the signup form, you agree to provide accurate and up-to-date information about yourself, including your name, email address, and any other required details.
+    </p><p>2. You must be at least 13 years old to create an account on the music webpage.
+    </p><p>3. You are responsible for keeping your account login information confidential and for any activity that occurs under your account.
+    </p><p>4. You agree not to share your account with anyone else or use another individual's account.
+    </p><p>5. The music webpage reserves the right to suspend or terminate your account if any violations of these terms and conditions are detected.
+    </p><p>6. The webpage may use cookies to enhance your browsing experience and improve the quality of service provided to you.
+    </p><p>7. You acknowledge and consent to receive promotional emails and newsletters from the music webpage, which you can opt out of at any time.
+    </p><p>8. The information you provide may be used for personalized recommendations, targeted advertising, or other marketing purposes in accordance with the Privacy Policy.
+    </p>
+    </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('terms-modal');
+    const termsLink = document.getElementById('terms-link');
+    const closeButton = document.querySelector('.close-button');
+    const signupForm = document.getElementById('signup-form');
+
+    termsLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+    });
+
+    signupForm.addEventListener('submit', function(event) {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        event.preventDefault();
+    }
+    });
+    });
+    </script>
+</body>
+</html>
